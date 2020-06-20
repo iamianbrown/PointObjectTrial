@@ -1,0 +1,54 @@
+/*
+        Create a Point Object
+        Ian Brown
+        June 18 2020
+*/
+
+#include <iostream>
+using namespace std;
+
+class Point
+{
+        public:
+                point(double xval = 0.0, double yval = 0.0)
+                {
+                        x = xval, y = yval;
+                }
+                double getx()
+                {
+                        return x;
+                }
+                double gety()
+                {
+                        return y;
+                }
+                void setx(double v)
+                {
+                        x = v;
+                }
+                void sety(double v)
+                {
+                        y = v;
+                }
+                point operator+ (const point & p)
+                {
+                        point sum;
+                        sum.x = this->x + p.x;
+                        sum.y = this->y + p.y;
+                        return sum;
+                }
+        private:
+                double x, y;
+}
+ostream& operator<< (ostream& out, point& p)
+{
+        out << "( " << p.getx() << " , " << p.gety() << " )";
+        return out;
+}
+int main(void)
+{
+        point point1 = {1.2, 9};
+        point point2 = {4.2, 0.1};
+        cout << point1 + point2 << endl;
+        return 0;
+}
