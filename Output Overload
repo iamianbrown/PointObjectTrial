@@ -30,9 +30,9 @@ class Point
                 {
                         y = v;
                 }
-                Point operator+ (const point & p)
+                Point operator+ (const Point & p)
                 {
-                        point sum;
+                        Point sum;
                         sum.x = this->x + p.x;
                         sum.y = this->y + p.y;
                         return sum;
@@ -40,7 +40,7 @@ class Point
         private:
                 double x, y;
 }
-ostream& operator<< (ostream& out, point& p)
+ostream& operator<< (ostream& out, Point& p)
 {
         out << "( " << p.getx() << " , " << p.gety() << " )";
         return out;
