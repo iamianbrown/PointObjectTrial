@@ -10,7 +10,7 @@ using namespace std;
 class Point
 {
         public:
-                point(double xval = 0.0, double yval = 0.0)
+                Point(double xval = 0.0, double yval = 0.0)
                 {
                         x = xval, y = yval;
                 }
